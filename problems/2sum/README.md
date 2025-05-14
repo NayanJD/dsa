@@ -33,4 +33,4 @@ You can return the answer in any order.
 * **Only one valid answer exists.**
  
 
-**Follow-up**: Can you come up with an algorithm that is less than `O(n<sup>2</sup>)` time complexity?
+**Follow-up**: Can you come up with an algorithm that is less than O(n<sup>2</sup>) time complexity?
