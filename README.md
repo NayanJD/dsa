@@ -1,6 +1,6 @@
 # DSA (Data Structures & Algorithm)
 
-This repo contains all kinds of competitive programming algorithms/problems or algorithms that I learn and journal.
+This repo contains all kinds of competitive programming algorithms/problems or algorithms in general that I learn and journal.
 
 Language supported:
 1. Golang
