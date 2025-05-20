@@ -1,0 +1,14 @@
+[package]
+name = "dsa"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+# name = "dsa/commons"
+path = "languages/rust/lib.rs"
+
+[[bin]]
+name = "twosum"
+path = "problems/2sum/rust/solution.rs"
+
+[dependencies]
