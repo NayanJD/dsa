@@ -9,6 +9,6 @@ path = "languages/rust/lib.rs"
 
 [[bin]]
 name = "twosum"
-path = "problems/2sum/rust/solution.rs"
+path = "problems/twosum/rust/solution.rs"
 
 [dependencies]

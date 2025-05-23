@@ -18,7 +18,7 @@ Just create a new directory in the problem directory called `go`. Add your solut
 ## How to run
 
 ```shell
-go test ./problems/2sum/go
+make test PROBLEM=twosum LANG=go
 ```
 
 ## Rust
@@ -38,7 +38,7 @@ path = "problems/2sum/rust/solution.rs"
 ### How to run
 
 ```shell
-cargo test --bin twosum
+make test PROBLEM=twosum LANG=rust
 ```
 
 ## C++
@@ -63,7 +63,5 @@ The target name should be the name of the problem directory and the path should 
 Run this at the root after you have added the target as described in the previous section:
 
 ```shell
-cmake -B build -S . # Generates the makefile
-make -C build  # build the binary
-build/twosum  # Runs the test cases
+make test PROBLEM=twosum LANG=cpp # or c++
 ```

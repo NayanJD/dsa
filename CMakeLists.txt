@@ -12,7 +12,7 @@ list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
 include(CTest)
 include(Catch)
 
-add_executable(twosum problems/2sum/cpp/solution.cc)
+add_executable(twosum problems/twosum/cpp/solution.cc)
 target_link_libraries(twosum commons)
 target_link_libraries(twosum Catch2::Catch2WithMain)
 catch_discover_tests(twosum)
