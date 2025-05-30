@@ -11,4 +11,8 @@ path = "languages/rust/lib.rs"
 name = "twosum"
 path = "problems/twosum/rust/solution.rs"
 
+[[bin]]
+name = "threesum"
+path = "problems/threesum/rust/solution.rs"
+
 [dependencies]

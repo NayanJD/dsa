@@ -17,3 +17,8 @@ target_link_libraries(twosum commons)
 target_link_libraries(twosum Catch2::Catch2WithMain)
 catch_discover_tests(twosum)
 
+add_executable(threesum problems/threesum/cpp/solution.cc)
+target_link_libraries(threesum commons)
+target_link_libraries(threesum Catch2::Catch2WithMain)
+catch_discover_tests(threesum)
+
