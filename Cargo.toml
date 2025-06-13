@@ -16,3 +16,6 @@ name = "threesum"
 path = "problems/threesum/rust/solution.rs"
 
 [dependencies]
+[[bin]]
+name = "dungeongame"
+path = "problems/dungeongame/rust/solution.rs"
