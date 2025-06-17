@@ -19,3 +19,7 @@ path = "problems/threesum/rust/solution.rs"
 [[bin]]
 name = "dungeongame"
 path = "problems/dungeongame/rust/solution.rs"
+
+[[bin]]
+name = "substringsansrepeating"
+path = "problems/substringsansrepeating/rust/solution.rs"

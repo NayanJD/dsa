@@ -26,3 +26,8 @@ add_executable(dungeongame problems/dungeongame/cpp/solution.cc)
 target_link_libraries(dungeongame commons)
 target_link_libraries(dungeongame Catch2::Catch2WithMain)
 catch_discover_tests(dungeongame)
+
+add_executable(substringsansrepeating problems/substringsansrepeating/cpp/solution.cc)
+target_link_libraries(substringsansrepeating commons)
+target_link_libraries(substringsansrepeating Catch2::Catch2WithMain)
+catch_discover_tests(substringsansrepeating)

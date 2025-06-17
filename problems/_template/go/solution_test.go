@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func TestTwoSum(t *testing.T) {
+func TestProblem(t *testing.T) {
 	tests := []struct {
 		num      int
 		expected int
@@ -22,7 +22,7 @@ func TestTwoSum(t *testing.T) {
 		t.Run(fmt.Sprintf("Test #%d", i), func(t *testing.T) {
 			actual := problem(test.nums, test.target)
 
-			assert.Equal(t, actual, test.expected)
+			assert.Equal(t, test.expected, actual)
 
 		})
 	}
