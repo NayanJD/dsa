@@ -6,21 +6,21 @@ import (
 	"testing"
 )
 
-func TestProblem(t *testing.T) {
+func TestMaxArea(t *testing.T) {
 	tests := []struct {
-		num      int
+		heights      []int
 		expected int
 	}{
 		{
-			num:      9,
-			expected: 9,
+			heights:      []int{1,8,6,2,5,4,8,3,7},
+			expected: 49,
 		},
 	}
 
 	for i, test := range tests {
 
 		t.Run(fmt.Sprintf("Test #%d", i), func(t *testing.T) {
-			actual := problem(test.nums)
+			actual := maxArea(test.heights)
 
 			assert.Equal(t, test.expected, actual)
 

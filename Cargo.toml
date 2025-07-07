@@ -23,3 +23,7 @@ path = "problems/dungeongame/rust/solution.rs"
 [[bin]]
 name = "substringsansrepeating"
 path = "problems/substringsansrepeating/rust/solution.rs"
+
+[[bin]]
+name = "containermostwater"
+path = "problems/containermostwater/rust/solution.rs"

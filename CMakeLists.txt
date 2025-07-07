@@ -31,3 +31,8 @@ add_executable(substringsansrepeating problems/substringsansrepeating/cpp/soluti
 target_link_libraries(substringsansrepeating commons)
 target_link_libraries(substringsansrepeating Catch2::Catch2WithMain)
 catch_discover_tests(substringsansrepeating)
+
+add_executable(containermostwater problems/containermostwater/cpp/solution.cc)
+target_link_libraries(containermostwater commons)
+target_link_libraries(containermostwater Catch2::Catch2WithMain)
+catch_discover_tests(containermostwater)

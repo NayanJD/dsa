@@ -49,6 +49,7 @@ new() {
   cp -r problems/_template problems/${PROBLEM}
 
   cat <<EOF >> CMakeLists.txt
+
 add_executable(${PROBLEM} problems/${PROBLEM}/cpp/solution.cc)
 target_link_libraries(${PROBLEM} commons)
 target_link_libraries(${PROBLEM} Catch2::Catch2WithMain)
@@ -56,6 +57,7 @@ catch_discover_tests(${PROBLEM})
 EOF
   
   cat <<EOF >> Cargo.toml
+
 [[bin]]
 name = "${PROBLEM}"
 path = "problems/${PROBLEM}/rust/solution.rs"
