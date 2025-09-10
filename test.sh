@@ -3,6 +3,10 @@
 test() {
   PROBLEM="$1"
   LANG="$2"
+  # Shift the first two arguments so $@ contains all remaining arguments
+  shift 2
+
+  # Now $@ contains all additional arguments
 
   if ! [[ -d "problems/${PROBLEM}" ]]; then
     echo "Problem directory not found: problems/${PROBLEM}"
@@ -15,26 +19,27 @@ test() {
       exit 1
 
     fi
-
-    cmake -B build -S . && make -C build && ./build/$PROBLEM
+    
+    # Build with cmake -DCMAKE_VERBOSE_MAKEFILE=ON to show cmake commands
+    cmake -B build -DCMAKE_VERBOSE_MAKEFILE=ON -S . && cmake --build build && ./build/$PROBLEM "$@"
   elif [[ "${LANG}" == "go" || "${LANG}" == "golang" ]]; then
 
     if ! [[ -d "problems/${PROBLEM}/go" ]]; then
-      echo "Lang cpp does not exist for this problem. Hint: create a cpp directory inside the problem directory"
+      echo "Lang go does not exist for this problem. Hint: create a go directory inside the problem directory"
       exit 1
 
     fi
 
-    go test -v "./problems/${PROBLEM}/go"
+    go test -v "./problems/${PROBLEM}/go" "$@"
   elif [[ "${LANG}" == "rust" ]]; then
 
     if ! [[ -d "problems/${PROBLEM}/rust" ]]; then
-      echo "Lang cpp does not exist for this problem. Hint: create a cpp directory inside the problem directory"
+      echo "Lang rust does not exist for this problem. Hint: create a rust directory inside the problem directory"
       exit 1
 
     fi
 
-    cargo test --bin "${PROBLEM}"
+    cargo test --bin "${PROBLEM}" "$@"
   fi
 }
 
@@ -68,7 +73,9 @@ EOF
 COMMAND="$1"
 
 if [[ "$COMMAND" == "test" ]]; then
-  test $2 $3
+  shift 1
+  test "$@" 
 elif [[ "$COMMAND" == "new" ]]; then
-  new $2
+  shift 1
+  new "$@"
 fi

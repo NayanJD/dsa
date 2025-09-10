@@ -27,3 +27,7 @@ path = "problems/substringsansrepeating/rust/solution.rs"
 [[bin]]
 name = "containermostwater"
 path = "problems/containermostwater/rust/solution.rs"
+
+[[bin]]
+name = "reverseinteger"
+path = "problems/reverseinteger/rust/solution.rs"

@@ -7,47 +7,69 @@ Language supported:
 2. Rust
 3. C++
 
-## Golang
+## How to add a new solution 
 
-The root of this repository is a go module. All problems are a package in itself which adds its own tests.
-
-### How to add a new solution
-
-Just create a new directory in the problem directory called `go`. Add your solution in solution.go and your tests in solution_test.go.
-
-## How to run
+Run below command to generate solution sub-directory for all supported laguages:
 
 ```shell
-make test PROBLEM=twosum LANG=go
+$ ./test.sh new reverseinteger
+$ ls problems/reverseinteger --tree
+ problems/reverseinteger
+├──  cpp
+│   └──  solution.cc
+├──  go
+│   ├──  solution.go
+│   └──  solution_test.go
+├── 󰂺 README.md
+└──  rust
+    └──  solution.rs
 ```
 
-## Rust
+### To run C++ solution
 
-The root of this repository is a cargo project. Each solution is added as a bin target in cargo.toml.
-
-### How to add a new solution
-
-Create a directory rust inside the new problem dirctory. Add solution.rs and add your tests right in solution.rs. Add the target in Cargo.toml:
-
-```toml
-[[bin]]
-name = "twosum"
-path = "problems/2sum/rust/solution.rs"
-```
-
-### How to run
+Run below for all test cases:
 
 ```shell
-make test PROBLEM=twosum LANG=rust
+./test.sh test reverseinteger c++
 ```
 
-## C++
+To run for a single test case:
+```shell
+./test.sh test reverseinteger c++ "Test Case#8"
+```
 
-This uses Catch2 to validate different test cases.
+### To run Golang solution
 
-### How to add a new solution
+Run below for all test cases:
 
-For a new C++ solution, add a folder cpp in the problem directory and add solution.cc into it. This .cc file should contain the solution along wit the test cases. For the new problem, add its target in the `CMakeLists.txt` file at the root of this project. Taking example of problem `twosum`:
+```shell
+./test.sh test reverseinteger go 
+```
+
+To run for a single test case:
+```shell
+./test.sh test reverseinteger go -run TestProblem/Test_#3
+```
+
+### To run Rust solution
+
+Run below for all test cases:
+
+```shell
+./test.sh test reverseinteger rust 
+```
+
+To run for a single test case:
+```shell
+./test.sh test reverseinteger rust tests::test_1
+```
+
+
+## Build processes of languages
+
+### C++
+
+cmake is used to build the test binary using [Catch2](https://github.com/catchorg/Catch2). For each new problem a new section like below is added to the CMakeLists.txt file.
 
 ```
 add_executable(twosum problems/2sum/cpp/solution.cc)
@@ -56,12 +78,19 @@ target_link_libraries(twosum Catch2::Catch2WithMain)
 catch_discover_tests(twosum)
 ```
 
-The target name should be the name of the problem directory and the path should reflect that in add_executable.
+TODO:
+- [ ] Run cmake build only for one problem. Currently, all binaries are built which would not be good as this project adds more solutions.
 
-### How to build and run
+### Golang
 
-Run this at the root after you have added the target as described in the previous section:
+The root of this repository is a go module. All problems are a package in itself which adds its own tests.
 
-```shell
-make test PROBLEM=twosum LANG=cpp # or c++
+### Rust
+
+The root of this repository is a cargo project. Each solution is added as a bin target in cargo.toml:
+
+```toml
+[[bin]]
+name = "twosum"
+path = "problems/2sum/rust/solution.rs"
 ```
