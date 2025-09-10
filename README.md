@@ -14,15 +14,15 @@ Run below command to generate solution sub-directory for all supported laguages:
 ```shell
 $ ./test.sh new reverseinteger
 $ ls problems/reverseinteger --tree
- problems/reverseinteger
-├──  cpp
-│   └──  solution.cc
-├──  go
-│   ├──  solution.go
-│   └──  solution_test.go
-├── 󰂺 README.md
-└──  rust
-    └──  solution.rs
+problems/reverseinteger
+├── cpp
+│   └── solution.cc
+├── go
+│   ├── solution.go
+│   └── solution_test.go
+├── README.md
+└── rust
+    └── solution.rs
 ```
 
 ### To run C++ solution
