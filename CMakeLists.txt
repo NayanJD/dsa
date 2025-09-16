@@ -75,3 +75,8 @@ endif()
 message(STATUS "Using Clang 19 compiler")
 message(STATUS "Problem: ${PROBLEM_NAME}")
 message(STATUS "Debug flags: ${CMAKE_CXX_FLAGS}")
+
+add_executable(countprimes problems/countprimes/cpp/solution.cc)
+target_link_libraries(countprimes commons)
+target_link_libraries(countprimes Catch2::Catch2WithMain)
+catch_discover_tests(countprimes)

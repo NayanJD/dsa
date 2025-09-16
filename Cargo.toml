@@ -31,3 +31,7 @@ path = "problems/containermostwater/rust/solution.rs"
 [[bin]]
 name = "reverseinteger"
 path = "problems/reverseinteger/rust/solution.rs"
+
+[[bin]]
+name = "countprimes"
+path = "problems/countprimes/rust/solution.rs"
